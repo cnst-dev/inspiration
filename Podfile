@@ -7,6 +7,5 @@ target 'Inspiration' do
   inhibit_all_warnings!
 
   # Pods for Inspiration
-  pod 'Alamofire', '~> 4.4'
 
 end
