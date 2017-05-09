@@ -11,11 +11,12 @@ import UIKit
 class MainViewController: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet private weak var quoteTextView: UITextView!
+    @IBOutlet weak var contentTextView: UITextView!
 
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        getQuote()
     }
 
     // MARK: - Actions
@@ -25,15 +26,10 @@ class MainViewController: UIViewController {
 
     // MARK: Quotes
     private func getQuote() {
-        let urlString = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1"
-        guard let url = URL(string: urlString) else { return }
-
-        DispatchQueue.global().async { [weak self] in
-            guard let data = try? Data(contentsOf: url) else { return }
-            guard let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String: Any]] else { return }
-            guard let quote = json?[0]["content"] as? String else { return }
+        guard let url = Constants.quotesURL else { return }
+        Quote.getQuote(from: url) { [weak self] (quote) in
             DispatchQueue.main.async {
-                self?.quoteTextView.text = quote
+                self?.contentTextView.setHTMLText(quote.content)
             }
         }
     }
