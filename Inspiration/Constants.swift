@@ -12,6 +12,6 @@ struct Constants {
 
     // MARK: - Properties
     static let quotesURL = URL(string: "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1")
-    static let imagesURL = URL(string: "https://source.unsplash.com/random")
+    static let imagesURL = URL(string: "https://source.unsplash.com/featured/")
 
 }

@@ -21,7 +21,7 @@ struct Quote {
             guard let data = data else { return }
             guard let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String: Any]] else { return }
             guard let rawTitle = json?[0]["title"] as? String, let rawContent = json?[0]["content"] as? String else { return }
-            let quote = Quote(title: rawTitle.cleared, content: rawContent.cleared)
+            let quote = Quote(title: rawTitle.cleared.uppercased(), content: rawContent.cleared)
             completion(quote)
         }.resume()
     }
