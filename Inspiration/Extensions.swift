@@ -8,10 +8,10 @@
 
 import UIKit
 
-extension UITextView {
-    func setHTMLText(_ text: String) {
-        guard let data = text.data(using: String.Encoding.unicode) else { return }
-        guard let attributedText = try? NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil) else { return }
-        self.attributedText = attributedText
+extension String {
+    var cleared: String {
+        guard let data = self.data(using: String.Encoding.unicode) else { return "" }
+        guard let attributedText = try? NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil) else { return ""}
+        return attributedText.string
     }
 }

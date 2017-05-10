@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     // MARK: - Outlets
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
 
     // MARK: - UIViewController
@@ -29,7 +30,8 @@ class MainViewController: UIViewController {
         guard let url = Constants.quotesURL else { return }
         Quote.getQuote(from: url) { [weak self] (quote) in
             DispatchQueue.main.async {
-                self?.contentTextView.setHTMLText(quote.content)
+                self?.contentTextView.text = quote.content
+                self?.titleLabel.text = "- \(quote.title)"
             }
         }
     }

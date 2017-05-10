@@ -20,8 +20,8 @@ struct Quote {
             guard error == nil else { return }
             guard let data = data else { return }
             guard let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String: Any]] else { return }
-            guard let title = json?[0]["title"] as? String, let content = json?[0]["content"] as? String else { return }
-            let quote = Quote(title: title, content: content)
+            guard let rawTitle = json?[0]["title"] as? String, let rawContent = json?[0]["content"] as? String else { return }
+            let quote = Quote(title: rawTitle.cleared, content: rawContent.cleared)
             completion(quote)
         }.resume()
     }
