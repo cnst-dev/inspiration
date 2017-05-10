@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF7CAE221EC33DC700B50E58 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CAE211EC33DC700B50E58 /* Background.swift */; };
 		CFAF1EEE1EC1D0DE00FD707B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF1EED1EC1D0DE00FD707B /* Quote.swift */; };
 		CFAF1EF11EC1E3BE00FD707B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF1EF01EC1E3BE00FD707B /* Constants.swift */; };
 		CFAF1EF31EC2008900FD707B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF1EF21EC2008900FD707B /* Extensions.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF7CAE211EC33DC700B50E58 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		CFAF1EED1EC1D0DE00FD707B /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		CFAF1EF01EC1E3BE00FD707B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CFAF1EF21EC2008900FD707B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				CFAF1EED1EC1D0DE00FD707B /* Quote.swift */,
+				CF7CAE211EC33DC700B50E58 /* Background.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				CFAF1EEE1EC1D0DE00FD707B /* Quote.swift in Sources */,
 				CFB993921EC0A16C0014C619 /* MainViewController.swift in Sources */,
 				CFAF1EF11EC1E3BE00FD707B /* Constants.swift in Sources */,
+				CF7CAE221EC33DC700B50E58 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
