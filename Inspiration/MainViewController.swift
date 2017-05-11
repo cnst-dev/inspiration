@@ -16,9 +16,18 @@ class MainViewController: UIViewController {
         didSet {
             contentTextView.translatesAutoresizingMaskIntoConstraints = true
             contentTextView.isScrollEnabled = false
+            contentTextView.addGestureRecognizer(
+                UITapGestureRecognizer(target: self, action: #selector(getQuote))
+            )
         }
     }
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView! {
+        didSet {
+            imageView.addGestureRecognizer(
+                UITapGestureRecognizer(target: self, action: #selector(getBackground))
+            )
+        }
+    }
     @IBOutlet private weak var buttonsStack: UIStackView!
 
     // MARK: - UIViewController
@@ -26,25 +35,24 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         getQuote()
         getBackground()
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(share))
+        swipeRecognizer.direction = .up
+        view.addGestureRecognizer(swipeRecognizer)
     }
 
     // MARK: - Actions
-    @IBAction private func newQuotebuttonPressed(_ sender: UIButton) {
-        getQuote()
-        getBackground()
-    }
-
-    @IBAction private func shareButtonPressed(_ sender: UIButton) {
-        buttonsStack.isHidden = true
-        guard let image = makeScreenShot() else { return }
-        buttonsStack.isHidden = false
-        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = view
-        present(activityViewController, animated: true, completion: nil)
+    @IBAction func infoButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(
+            title: "Instruction",
+            message: "\n Swipe up for sharing.\n \n Tap the image to update.\n \n Tap the quote to update.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 
     // MARK: API integration
-    private func getQuote() {
+    func getQuote() {
         guard let url = Constants.quotesURL else { return }
         Quote.getQuote(from: url) { [weak self] (quote) in
             DispatchQueue.main.async {
@@ -55,7 +63,7 @@ class MainViewController: UIViewController {
         }
     }
 
-    private func getBackground() {
+    func getBackground() {
         guard let url = Constants.imagesURL else { return }
         Background.getImage(from: url) { [weak self] (backround) in
             DispatchQueue.main.async {
@@ -65,12 +73,21 @@ class MainViewController: UIViewController {
     }
 
     // MARK: - Methods
-    func makeScreenShot() -> UIImage? {
-        UIGraphicsBeginImageContext(view.frame.size)
+    private func makeScreenShot() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, UIScreen.main.scale)
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         view.layer.render(in: context)
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
         UIGraphicsEndImageContext()
         return image
+    }
+
+    func share() {
+        buttonsStack.isHidden = true
+        guard let image = makeScreenShot() else { return }
+        buttonsStack.isHidden = false
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        present(activityViewController, animated: true, completion: nil)
     }
 }

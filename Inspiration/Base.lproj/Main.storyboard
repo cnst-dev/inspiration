@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M9L-vi-DM8">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M9L-vi-DM8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVD-go-VjA">
@@ -68,38 +68,12 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LEJ-QN-Ctt">
-                                <rect key="frame" x="144" y="28" width="168" height="36"/>
+                                <rect key="frame" x="290" y="28" width="22" height="22"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcb-Oy-a2V">
-                                        <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="4zR-e4-1dz"/>
-                                            <constraint firstAttribute="height" constant="36" id="Za9-vr-hxz"/>
-                                        </constraints>
-                                        <state key="normal" image="share"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRG-Yk-8pD">
+                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                         <connections>
-                                            <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGz-mS-r1y"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRG-Yk-8pD">
-                                        <rect key="frame" x="66" y="0.0" width="36" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="hxB-Xt-gb9"/>
-                                            <constraint firstAttribute="width" constant="36" id="juu-iq-O61"/>
-                                        </constraints>
-                                        <state key="normal" image="info"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDI-JP-Dnm">
-                                        <rect key="frame" x="132" y="0.0" width="36" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="2VG-2Y-3b0"/>
-                                            <constraint firstAttribute="height" constant="36" id="wkB-h3-jJF"/>
-                                        </constraints>
-                                        <state key="normal" image="idea">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="newQuotebuttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qXM-8o-eg5"/>
+                                            <action selector="infoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hI-06-LZq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -134,9 +108,4 @@
             <point key="canvasLocation" x="30" y="97.183098591549296"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="idea" width="512" height="512"/>
-        <image name="info" width="512" height="512"/>
-        <image name="share" width="512" height="512"/>
-    </resources>
 </document>
