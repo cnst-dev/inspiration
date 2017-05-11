@@ -12,7 +12,12 @@ class MainViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var contentTextView: UITextView!
+    @IBOutlet private weak var contentTextView: UITextView! {
+        didSet {
+            contentTextView.translatesAutoresizingMaskIntoConstraints = true
+            contentTextView.isScrollEnabled = false
+        }
+    }
     @IBOutlet private weak var imageView: UIImageView!
 
     // MARK: - UIViewController
@@ -33,13 +38,16 @@ class MainViewController: UIViewController {
         guard let url = Constants.quotesURL else { return }
         Quote.getQuote(from: url) { [weak self] (quote) in
             DispatchQueue.main.async {
-                self?.contentTextView.text = quote.content
-                self?.titleLabel.text = "- \(quote.title)"
+//                self?.contentTextView.text = quote.content
+//                self?.titleLabel.text = "- \(quote.title)"
+                self?.contentTextView.text = "QOQOQ"
+                self?.titleLabel.text = "AAA"
+                self?.contentTextView.sizeToFit()
             }
         }
     }
 
-    func getBackground() {
+    private func getBackground() {
         guard let url = Constants.imagesURL else { return }
         Background.getImage(from: url) { [weak self] (backround) in
             DispatchQueue.main.async {
