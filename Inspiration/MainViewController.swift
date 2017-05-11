@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
         }
     }
     @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var buttonsStack: UIStackView!
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -28,9 +29,18 @@ class MainViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @IBAction private func buttonPressed(_ sender: UIButton) {
+    @IBAction private func newQuotebuttonPressed(_ sender: UIButton) {
         getQuote()
         getBackground()
+    }
+
+    @IBAction private func shareButtonPressed(_ sender: UIButton) {
+        buttonsStack.isHidden = true
+        guard let image = makeScreenShot() else { return }
+        buttonsStack.isHidden = false
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        present(activityViewController, animated: true, completion: nil)
     }
 
     // MARK: API integration
@@ -38,10 +48,8 @@ class MainViewController: UIViewController {
         guard let url = Constants.quotesURL else { return }
         Quote.getQuote(from: url) { [weak self] (quote) in
             DispatchQueue.main.async {
-//                self?.contentTextView.text = quote.content
-//                self?.titleLabel.text = "- \(quote.title)"
-                self?.contentTextView.text = "QOQOQ"
-                self?.titleLabel.text = "AAA"
+                self?.contentTextView.text = quote.content
+                self?.titleLabel.text = "- \(quote.title)"
                 self?.contentTextView.sizeToFit()
             }
         }
@@ -54,5 +62,15 @@ class MainViewController: UIViewController {
                 self?.imageView.image = backround.image
             }
         }
+    }
+
+    // MARK: - Methods
+    func makeScreenShot() -> UIImage? {
+        UIGraphicsBeginImageContext(view.frame.size)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        view.layer.render(in: context)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return image
     }
 }
