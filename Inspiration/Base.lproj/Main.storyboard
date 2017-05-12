@@ -78,13 +78,18 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="EZJ-PB-V07">
+                                <rect key="frame" x="142" y="265.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LEJ-QN-Ctt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="1Yr-kp-abR"/>
                             <constraint firstItem="mVD-go-VjA" firstAttribute="height" secondItem="1Aq-aa-xbI" secondAttribute="height" id="5aM-80-6vU"/>
+                            <constraint firstItem="EZJ-PB-V07" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="81o-d1-mBW"/>
                             <constraint firstItem="M9L-vi-DM8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AuY-U1-AAU"/>
                             <constraint firstAttribute="trailing" secondItem="1Aq-aa-xbI" secondAttribute="trailing" constant="5" id="GTE-r8-15p"/>
+                            <constraint firstItem="EZJ-PB-V07" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jkt-Qh-adK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M9L-vi-DM8" secondAttribute="bottom" id="eKQ-ye-WbK"/>
                             <constraint firstItem="LEJ-QN-Ctt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="ep1-DX-WWE"/>
                             <constraint firstItem="M9L-vi-DM8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gTQ-XY-on3"/>
@@ -100,6 +105,7 @@
                         <outlet property="buttonsStack" destination="LEJ-QN-Ctt" id="ERn-Hp-Eak"/>
                         <outlet property="contentTextView" destination="pZK-ek-bjB" id="MSE-CV-riB"/>
                         <outlet property="imageView" destination="M9L-vi-DM8" id="YF5-R0-Zjh"/>
+                        <outlet property="spinner" destination="EZJ-PB-V07" id="ioz-Wp-dkM"/>
                         <outlet property="titleLabel" destination="CGW-AE-O5C" id="Ezo-2r-TmO"/>
                     </connections>
                 </viewController>

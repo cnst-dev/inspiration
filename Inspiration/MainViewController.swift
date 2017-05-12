@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
         }
     }
     @IBOutlet private weak var buttonsStack: UIStackView!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -53,21 +54,30 @@ class MainViewController: UIViewController {
 
     // MARK: API integration
     func getQuote() {
+        print("q")
+        view.isUserInteractionEnabled = false
+        spinner.startAnimating()
         guard let url = Constants.quotesURL else { return }
         Quote.getQuote(from: url) { [weak self] (quote) in
             DispatchQueue.main.async {
                 self?.contentTextView.text = quote.content
                 self?.titleLabel.text = "- \(quote.title)"
                 self?.contentTextView.sizeToFit()
+                self?.spinner.stopAnimating()
+                self?.view.isUserInteractionEnabled = true
             }
         }
     }
 
     func getBackground() {
         guard let url = Constants.imagesURL else { return }
+        spinner.startAnimating()
+        view.isUserInteractionEnabled = false
         Background.getImage(from: url) { [weak self] (backround) in
             DispatchQueue.main.async {
                 self?.imageView.image = backround.image
+                self?.spinner.stopAnimating()
+                self?.view.isUserInteractionEnabled = true
             }
         }
     }
