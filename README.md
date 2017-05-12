@@ -5,7 +5,7 @@ Simple Inspiring pictures generator app written in Swift 3.
 
 This project is written in Swift 3.1 and Xcode 8.3.2.
 
-Quick Chat for iOS is compatible with iOS 9.1+.
+Inspiration app for iOS is compatible with iOS 9.1+.
 
 ## Author
 
