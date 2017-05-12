@@ -54,7 +54,6 @@ class MainViewController: UIViewController {
 
     // MARK: API integration
     func getQuote() {
-        print("q")
         view.isUserInteractionEnabled = false
         spinner.startAnimating()
         guard let url = Constants.quotesURL else { return }

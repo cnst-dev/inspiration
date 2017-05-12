@@ -9,6 +9,7 @@
 import UIKit
 
 extension String {
+
     var cleared: String {
         guard let data = self.data(using: String.Encoding.unicode) else { return "" }
         guard let attributedText = try? NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil) else { return ""}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF004F741EC5F961009D39E4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF004F731EC5F961009D39E4 /* Reachability.swift */; };
 		CF7CAE221EC33DC700B50E58 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CAE211EC33DC700B50E58 /* Background.swift */; };
 		CFAF1EEE1EC1D0DE00FD707B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF1EED1EC1D0DE00FD707B /* Quote.swift */; };
 		CFAF1EF11EC1E3BE00FD707B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF1EF01EC1E3BE00FD707B /* Constants.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF004F731EC5F961009D39E4 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CF7CAE211EC33DC700B50E58 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		CFAF1EED1EC1D0DE00FD707B /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		CFAF1EF01EC1E3BE00FD707B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			children = (
 				CFAF1EF01EC1E3BE00FD707B /* Constants.swift */,
 				CFAF1EF21EC2008900FD707B /* Extensions.swift */,
+				CF004F731EC5F961009D39E4 /* Reachability.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF004F741EC5F961009D39E4 /* Reachability.swift in Sources */,
 				CFAF1EF31EC2008900FD707B /* Extensions.swift in Sources */,
 				CFE5F25D1EC09BD7008DA005 /* AppDelegate.swift in Sources */,
 				CFAF1EEE1EC1D0DE00FD707B /* Quote.swift in Sources */,
