@@ -28,21 +28,30 @@ class MainViewController: UIViewController {
             )
         }
     }
+    @IBOutlet private weak var messageView: UIView!
+
     @IBOutlet private weak var buttonsStack: UIStackView!
+    @IBOutlet private weak var quotesStack: UIStackView!
+
     @IBOutlet private weak var spinner: UIActivityIndicatorView!
 
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        getQuote()
-        getBackground()
+
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(share))
         swipeRecognizer.direction = .up
         view.addGestureRecognizer(swipeRecognizer)
+
+        guard Reachability.isConnectedToNetwork() else { return }
+
+        getBackground()
+        getQuote()
+        messageView.isHidden = true
     }
 
     // MARK: - Actions
-    @IBAction func infoButtonPressed(_ sender: UIButton) {
+    @IBAction private func infoButtonPressed(_ sender: UIButton) {
         let alert = UIAlertController(
             title: "Instruction",
             message: "\n Swipe up for sharing.\n \n Tap the image to update.\n \n Tap the quote to update.",
@@ -52,8 +61,17 @@ class MainViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
+    @IBAction private func tryButtonPressed(_ sender: UIButton) {
+        guard Reachability.isConnectedToNetwork() else { return }
+
+        getBackground()
+        getQuote()
+        messageView.isHidden = true
+    }
+
     // MARK: API integration
     func getQuote() {
+        guard Reachability.isConnectedToNetwork() else { return }
         view.isUserInteractionEnabled = false
         spinner.startAnimating()
         guard let url = Constants.quotesURL else { return }
@@ -69,6 +87,7 @@ class MainViewController: UIViewController {
     }
 
     func getBackground() {
+        guard Reachability.isConnectedToNetwork() else { return }
         guard let url = Constants.imagesURL else { return }
         spinner.startAnimating()
         view.isUserInteractionEnabled = false
@@ -77,6 +96,7 @@ class MainViewController: UIViewController {
                 self?.imageView.image = backround.image
                 self?.spinner.stopAnimating()
                 self?.view.isUserInteractionEnabled = true
+                self?.quotesStack.isHidden = false
             }
         }
     }
