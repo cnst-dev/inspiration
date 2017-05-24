@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF004F741EC5F961009D39E4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF004F731EC5F961009D39E4 /* Reachability.swift */; };
-		CF0394EB1ED561900091C94F /* Animated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0394EA1ED561900091C94F /* Animated.swift */; };
+		CF0394EB1ED561900091C94F /* Animating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0394EA1ED561900091C94F /* Animating.swift */; };
 		CF0394ED1ED566D80091C94F /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0394EC1ED566D80091C94F /* MessageView.swift */; };
 		CF7CAE221EC33DC700B50E58 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7CAE211EC33DC700B50E58 /* Background.swift */; };
 		CFAF1EEE1EC1D0DE00FD707B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF1EED1EC1D0DE00FD707B /* Quote.swift */; };
@@ -23,7 +23,7 @@
 
 /* Begin PBXFileReference section */
 		CF004F731EC5F961009D39E4 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		CF0394EA1ED561900091C94F /* Animated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animated.swift; sourceTree = "<group>"; };
+		CF0394EA1ED561900091C94F /* Animating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animating.swift; sourceTree = "<group>"; };
 		CF0394EC1ED566D80091C94F /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		CF7CAE211EC33DC700B50E58 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		CFAF1EED1EC1D0DE00FD707B /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		CF0394E91ED561650091C94F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				CF0394EA1ED561900091C94F /* Animated.swift */,
+				CF0394EA1ED561900091C94F /* Animating.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 				CFE5F25D1EC09BD7008DA005 /* AppDelegate.swift in Sources */,
 				CF0394ED1ED566D80091C94F /* MessageView.swift in Sources */,
 				CFAF1EEE1EC1D0DE00FD707B /* Quote.swift in Sources */,
-				CF0394EB1ED561900091C94F /* Animated.swift in Sources */,
+				CF0394EB1ED561900091C94F /* Animating.swift in Sources */,
 				CFB993921EC0A16C0014C619 /* MainViewController.swift in Sources */,
 				CFAF1EF11EC1E3BE00FD707B /* Constants.swift in Sources */,
 				CF7CAE221EC33DC700B50E58 /* Background.swift in Sources */,

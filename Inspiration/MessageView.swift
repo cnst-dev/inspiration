@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageView: UIView, Animated {
+class MessageView: UIView, Animating {
 
     // MARK: - Nested
     private struct Strings {

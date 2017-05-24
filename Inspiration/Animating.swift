@@ -1,5 +1,5 @@
 //
-//  Animated.swift
+//  Animating.swift
 //  Inspiration
 //
 //  Created by Konstantin Khokhlov on 24.05.17.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol Animated {}
+protocol Animating {}
 
-extension Animated where Self: UIView {
+extension Animating where Self: UIView {
     func animateAlpha(duration: CGFloat) {
         self.isHidden = false
         let startAlpha = self.alpha
