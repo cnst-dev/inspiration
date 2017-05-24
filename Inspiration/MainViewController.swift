@@ -10,6 +10,14 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    // MARK: - Nested
+    private struct Strings {
+        static let info = (title: "Instruction",
+                           message: "\n Swipe up for sharing.\n \n Tap the image to update.\n \n Tap the quote to update.",
+                           button: "OK"
+        )
+    }
+
     // MARK: - Outlets
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var contentTextView: UITextView! {
@@ -28,8 +36,7 @@ class MainViewController: UIViewController {
             )
         }
     }
-    @IBOutlet private weak var messageView: UIView!
-
+    @IBOutlet private weak var messageView: MessageView!
     @IBOutlet private weak var buttonsStack: UIStackView!
     @IBOutlet private weak var quotesStack: UIStackView!
 
@@ -47,17 +54,18 @@ class MainViewController: UIViewController {
 
         getBackground()
         getQuote()
-        messageView.isHidden = true
+        messageView.configure(for: .onStart)
+        messageView.animateAlpha(duration: 2.0)
     }
 
     // MARK: - Actions
     @IBAction private func infoButtonPressed(_ sender: UIButton) {
         let alert = UIAlertController(
-            title: "Instruction",
-            message: "\n Swipe up for sharing.\n \n Tap the image to update.\n \n Tap the quote to update.",
+            title: Strings.info.title,
+            message: Strings.info.message,
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: Strings.info.button, style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 
@@ -66,12 +74,16 @@ class MainViewController: UIViewController {
 
         getBackground()
         getQuote()
-        messageView.isHidden = true
+        messageView.animateAlpha(duration: 2.0)
     }
 
     // MARK: API integration
     func getQuote() {
-        guard Reachability.isConnectedToNetwork() else { return }
+        guard Reachability.isConnectedToNetwork() else {
+            messageView.configure(for: .inWork)
+            messageView.animateAlpha(duration: 2.0)
+            return
+        }
         view.isUserInteractionEnabled = false
         spinner.startAnimating()
         guard let url = Constants.quotesURL else { return }
@@ -87,7 +99,11 @@ class MainViewController: UIViewController {
     }
 
     func getBackground() {
-        guard Reachability.isConnectedToNetwork() else { return }
+        guard Reachability.isConnectedToNetwork() else {
+            messageView.configure(for: .inWork)
+            messageView.animateAlpha(duration: 2.0)
+            return
+        }
         guard let url = Constants.imagesURL else { return }
         spinner.startAnimating()
         view.isUserInteractionEnabled = false

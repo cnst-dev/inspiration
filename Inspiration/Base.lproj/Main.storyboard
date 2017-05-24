@@ -79,7 +79,7 @@
                                     <constraint firstItem="m3b-RT-yvJ" firstAttribute="leading" secondItem="1Aq-aa-xbI" secondAttribute="leading" id="8jO-Fm-2iK"/>
                                 </constraints>
                             </stackView>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-b1-VKg">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-b1-VKg" customClass="MessageView" customModule="Inspiration" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The internet connection appears to be offline..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qY4-Wy-v2s">
@@ -110,6 +110,10 @@
                                     <constraint firstItem="HNP-0N-yTp" firstAttribute="centerX" secondItem="kWf-b1-VKg" secondAttribute="centerX" id="Uw7-MM-vxE"/>
                                     <constraint firstItem="qY4-Wy-v2s" firstAttribute="centerY" secondItem="kWf-b1-VKg" secondAttribute="centerY" constant="-50" id="hRo-sr-vTf"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="messageLabel" destination="qY4-Wy-v2s" id="q46-cr-3V0"/>
+                                    <outlet property="tryButton" destination="HNP-0N-yTp" id="HFi-dn-8Zq"/>
+                                </connections>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="EZJ-PB-V07">
                                 <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
@@ -142,7 +146,7 @@
                         <outlet property="buttonsStack" destination="LEJ-QN-Ctt" id="ERn-Hp-Eak"/>
                         <outlet property="contentTextView" destination="pZK-ek-bjB" id="MSE-CV-riB"/>
                         <outlet property="imageView" destination="M9L-vi-DM8" id="YF5-R0-Zjh"/>
-                        <outlet property="messageView" destination="kWf-b1-VKg" id="ksL-Lr-M23"/>
+                        <outlet property="messageView" destination="kWf-b1-VKg" id="Rd2-SN-E2W"/>
                         <outlet property="quotesStack" destination="1Aq-aa-xbI" id="rso-l3-Uc0"/>
                         <outlet property="spinner" destination="EZJ-PB-V07" id="ioz-Wp-dkM"/>
                         <outlet property="titleLabel" destination="CGW-AE-O5C" id="Ezo-2r-TmO"/>
