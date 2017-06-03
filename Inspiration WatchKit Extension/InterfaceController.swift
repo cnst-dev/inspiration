@@ -7,24 +7,43 @@
 //
 
 import WatchKit
+import WatchConnectivity
 import Foundation
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
+    // MARK: - Outlets
+    @IBOutlet private var quoteLabel: WKInterfaceLabel!
+
+    // MARK: - WKInterfaceController
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
-        // Configure interface objects here.
+        guard WCSession.isSupported() else { return }
+        WCSession.default().delegate = self
+        WCSession.default().activate()
     }
 
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
+    // MARK: - WCSessionDelegate
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if activationState == .activated {
+            print("Communication is activated")
+        }
     }
 
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+    // MARK: - iPhone Integration
+    // MARK: Get data
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+        DispatchQueue.main.async { [weak self] in
+            guard let text = userInfo["content"] as? String else { return }
+            self?.quoteLabel.setText(text)
+        }
     }
-
+    // MARK: Send data
+    @IBAction private func newQuoteButtonPressed() {
+        guard WCSession.default().activationState == .activated else { return }
+        guard WCSession.default().isReachable else { return }
+        let message = ["message": "update"]
+        WCSession.default().sendMessage(message, replyHandler: nil)
+    }
 }

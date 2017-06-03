@@ -1,14 +1,45 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Inspiration_WatchKit" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" spacing="0.0" id="kh5-UH-vIG">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="❝" id="4gn-7A-cML">
+                                    <color key="textColor" red="0.01448708214" green="0.66109091040000001" blue="0.96040183310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </label>
+                                <label width="0.69999999999999996" alignment="center" verticalAlignment="center" text="A well-defined problem is half solved." textAlignment="left" numberOfLines="0" id="tj0-N0-wy5">
+                                    <color key="textColor" red="0.28520548340000001" green="0.31244885919999998" blue="0.38303160670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="center" text="❞" id="4A7-Ws-eku">
+                                    <color key="textColor" red="0.01448708214" green="0.66109091040000001" blue="0.96040183310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="0.0"/>
+                        </group>
+                        <button width="1" alignment="left" title="New Quote" id="YlO-4G-9GY">
+                            <color key="backgroundColor" red="0.58431372550000005" green="0.88235294119999996" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="newQuoteButtonPressed" destination="AgC-eL-Hgc" id="eeg-Rz-dKl"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="quoteLabel" destination="tj0-N0-wy5" id="Ck0-aT-TBl"/>
+                    </connections>
+                </controller>
             </objects>
         </scene>
     </scenes>

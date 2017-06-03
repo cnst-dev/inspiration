@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, WCSessionDelegate {
 
     // MARK: - Nested
     private struct Strings {
@@ -56,6 +57,25 @@ class MainViewController: UIViewController {
         getQuote()
         messageView.configure(for: .onStart)
         messageView.animateAlpha(duration: 2.0)
+
+        guard WCSession.isSupported() else { return }
+        WCSession.default().delegate = self
+        WCSession.default().activate()
+    }
+
+    // MARK: - WCSessionDelegate
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if activationState == .activated {
+            print("Communication is activated")
+        }
+    }
+
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("Communication is inactive")
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+        WCSession.default().activate()
     }
 
     // MARK: - Actions
@@ -95,6 +115,7 @@ class MainViewController: UIViewController {
                 self?.spinner.stopAnimating()
                 self?.view.isUserInteractionEnabled = true
             }
+            self?.sendToWatch(quote: quote)
         }
     }
 
@@ -134,5 +155,20 @@ class MainViewController: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view
         present(activityViewController, animated: true, completion: nil)
+    }
+
+    // MARK: - Watch Integration
+    // MARK: Get data
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.getQuote()
+        }
+    }
+
+    // MARK: - Send data
+    private func sendToWatch(quote: Quote) {
+        guard WCSession.default().activationState == .activated else { return }
+        let content = ["content": quote.content]
+        WCSession.default().transferUserInfo(content)
     }
 }
