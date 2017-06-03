@@ -19,7 +19,56 @@
 		CFE5F2621EC09BD7008DA005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE5F2601EC09BD7008DA005 /* Main.storyboard */; };
 		CFE5F2641EC09BD7008DA005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE5F2631EC09BD7008DA005 /* Assets.xcassets */; };
 		CFE5F2671EC09BD7008DA005 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE5F2651EC09BD7008DA005 /* LaunchScreen.storyboard */; };
+		CFF7704C1EE27FF200F49E6A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF7704A1EE27FF200F49E6A /* Interface.storyboard */; };
+		CFF7704E1EE27FF200F49E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF7704D1EE27FF200F49E6A /* Assets.xcassets */; };
+		CFF770551EE27FF200F49E6A /* Inspiration WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CFF770541EE27FF200F49E6A /* Inspiration WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CFF7705A1EE27FF200F49E6A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF770591EE27FF200F49E6A /* InterfaceController.swift */; };
+		CFF7705C1EE27FF200F49E6A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF7705B1EE27FF200F49E6A /* ExtensionDelegate.swift */; };
+		CFF7705E1EE27FF200F49E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF7705D1EE27FF200F49E6A /* Assets.xcassets */; };
+		CFF770621EE27FF200F49E6A /* Inspiration WatchKit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CFF770481EE27FF200F49E6A /* Inspiration WatchKit.app */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFF770561EE27FF200F49E6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFE5F2511EC09BD7008DA005 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFF770531EE27FF200F49E6A;
+			remoteInfo = "Inspiration WatchKit Extension";
+		};
+		CFF770601EE27FF200F49E6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFE5F2511EC09BD7008DA005 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFF770471EE27FF200F49E6A;
+			remoteInfo = "Inspiration WatchKit";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CFF770681EE27FF200F49E6A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CFF770551EE27FF200F49E6A /* Inspiration WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFF7706A1EE27FF200F49E6A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CFF770621EE27FF200F49E6A /* Inspiration WatchKit.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CF004F731EC5F961009D39E4 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -36,10 +85,26 @@
 		CFE5F2631EC09BD7008DA005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE5F2661EC09BD7008DA005 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE5F2681EC09BD7008DA005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF770481EE27FF200F49E6A /* Inspiration WatchKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inspiration WatchKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF7704B1EE27FF200F49E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		CFF7704D1EE27FF200F49E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFF7704F1EE27FF200F49E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF770541EE27FF200F49E6A /* Inspiration WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Inspiration WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF770591EE27FF200F49E6A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		CFF7705B1EE27FF200F49E6A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		CFF7705D1EE27FF200F49E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFF7705F1EE27FF200F49E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CFE5F2561EC09BD7008DA005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFF770511EE27FF200F49E6A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -116,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				CFE5F25B1EC09BD7008DA005 /* Inspiration */,
+				CFF770491EE27FF200F49E6A /* Inspiration WatchKit */,
+				CFF770581EE27FF200F49E6A /* Inspiration WatchKit Extension */,
 				CFE5F25A1EC09BD7008DA005 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				CFE5F2591EC09BD7008DA005 /* Inspiration.app */,
+				CFF770481EE27FF200F49E6A /* Inspiration WatchKit.app */,
+				CFF770541EE27FF200F49E6A /* Inspiration WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +210,27 @@
 			path = Inspiration;
 			sourceTree = "<group>";
 		};
+		CFF770491EE27FF200F49E6A /* Inspiration WatchKit */ = {
+			isa = PBXGroup;
+			children = (
+				CFF7704A1EE27FF200F49E6A /* Interface.storyboard */,
+				CFF7704D1EE27FF200F49E6A /* Assets.xcassets */,
+				CFF7704F1EE27FF200F49E6A /* Info.plist */,
+			);
+			path = "Inspiration WatchKit";
+			sourceTree = "<group>";
+		};
+		CFF770581EE27FF200F49E6A /* Inspiration WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CFF770591EE27FF200F49E6A /* InterfaceController.swift */,
+				CFF7705B1EE27FF200F49E6A /* ExtensionDelegate.swift */,
+				CFF7705D1EE27FF200F49E6A /* Assets.xcassets */,
+				CFF7705F1EE27FF200F49E6A /* Info.plist */,
+			);
+			path = "Inspiration WatchKit Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,15 +242,51 @@
 				CFE5F2561EC09BD7008DA005 /* Frameworks */,
 				CFE5F2571EC09BD7008DA005 /* Resources */,
 				CFB993901EC0A10C0014C619 /* SwiftLint */,
+				CFF7706A1EE27FF200F49E6A /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CFF770611EE27FF200F49E6A /* PBXTargetDependency */,
 			);
 			name = Inspiration;
 			productName = Inspiration;
 			productReference = CFE5F2591EC09BD7008DA005 /* Inspiration.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CFF770471EE27FF200F49E6A /* Inspiration WatchKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFF770691EE27FF200F49E6A /* Build configuration list for PBXNativeTarget "Inspiration WatchKit" */;
+			buildPhases = (
+				CFF770461EE27FF200F49E6A /* Resources */,
+				CFF770681EE27FF200F49E6A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFF770571EE27FF200F49E6A /* PBXTargetDependency */,
+			);
+			name = "Inspiration WatchKit";
+			productName = "Inspiration WatchKit";
+			productReference = CFF770481EE27FF200F49E6A /* Inspiration WatchKit.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CFF770531EE27FF200F49E6A /* Inspiration WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFF770671EE27FF200F49E6A /* Build configuration list for PBXNativeTarget "Inspiration WatchKit Extension" */;
+			buildPhases = (
+				CFF770501EE27FF200F49E6A /* Sources */,
+				CFF770511EE27FF200F49E6A /* Frameworks */,
+				CFF770521EE27FF200F49E6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Inspiration WatchKit Extension";
+			productName = "Inspiration WatchKit Extension";
+			productReference = CFF770541EE27FF200F49E6A /* Inspiration WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -173,6 +299,16 @@
 				ORGANIZATIONNAME = "Konstantin Khokhlov";
 				TargetAttributes = {
 					CFE5F2581EC09BD7008DA005 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MMQCGLY2E8;
+						ProvisioningStyle = Automatic;
+					};
+					CFF770471EE27FF200F49E6A = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MMQCGLY2E8;
+						ProvisioningStyle = Automatic;
+					};
+					CFF770531EE27FF200F49E6A = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = MMQCGLY2E8;
 						ProvisioningStyle = Automatic;
@@ -193,6 +329,8 @@
 			projectRoot = "";
 			targets = (
 				CFE5F2581EC09BD7008DA005 /* Inspiration */,
+				CFF770471EE27FF200F49E6A /* Inspiration WatchKit */,
+				CFF770531EE27FF200F49E6A /* Inspiration WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +343,23 @@
 				CFE5F2671EC09BD7008DA005 /* LaunchScreen.storyboard in Resources */,
 				CFE5F2641EC09BD7008DA005 /* Assets.xcassets in Resources */,
 				CFE5F2621EC09BD7008DA005 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFF770461EE27FF200F49E6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFF7704E1EE27FF200F49E6A /* Assets.xcassets in Resources */,
+				CFF7704C1EE27FF200F49E6A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFF770521EE27FF200F49E6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFF7705E1EE27FF200F49E6A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +399,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFF770501EE27FF200F49E6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFF7705C1EE27FF200F49E6A /* ExtensionDelegate.swift in Sources */,
+				CFF7705A1EE27FF200F49E6A /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFF770571EE27FF200F49E6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFF770531EE27FF200F49E6A /* Inspiration WatchKit Extension */;
+			targetProxy = CFF770561EE27FF200F49E6A /* PBXContainerItemProxy */;
+		};
+		CFF770611EE27FF200F49E6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFF770471EE27FF200F49E6A /* Inspiration WatchKit */;
+			targetProxy = CFF770601EE27FF200F49E6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CFE5F2601EC09BD7008DA005 /* Main.storyboard */ = {
@@ -261,6 +438,14 @@
 				CFE5F2661EC09BD7008DA005 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CFF7704A1EE27FF200F49E6A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFF7704B1EE27FF200F49E6A /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -389,6 +574,76 @@
 			};
 			name = Release;
 		};
+		CFF770631EE27FF200F49E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MMQCGLY2E8;
+				IBSC_MODULE = Inspiration_WatchKit_Extension;
+				INFOPLIST_FILE = "Inspiration WatchKit/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = space.constantin.inspiration.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		CFF770641EE27FF200F49E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MMQCGLY2E8;
+				IBSC_MODULE = Inspiration_WatchKit_Extension;
+				INFOPLIST_FILE = "Inspiration WatchKit/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = space.constantin.inspiration.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		CFF770651EE27FF200F49E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = MMQCGLY2E8;
+				INFOPLIST_FILE = "Inspiration WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = space.constantin.inspiration.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		CFF770661EE27FF200F49E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = MMQCGLY2E8;
+				INFOPLIST_FILE = "Inspiration WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = space.constantin.inspiration.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -409,6 +664,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CFF770671EE27FF200F49E6A /* Build configuration list for PBXNativeTarget "Inspiration WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFF770651EE27FF200F49E6A /* Debug */,
+				CFF770661EE27FF200F49E6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFF770691EE27FF200F49E6A /* Build configuration list for PBXNativeTarget "Inspiration WatchKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFF770631EE27FF200F49E6A /* Debug */,
+				CFF770641EE27FF200F49E6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
