@@ -20,13 +20,13 @@
                                     <color key="textColor" red="0.01448708214" green="0.66109091040000001" blue="0.96040183310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
                                 <label width="0.69999999999999996" alignment="center" verticalAlignment="center" text="A well-defined problem is half solved." textAlignment="left" numberOfLines="0" id="tj0-N0-wy5">
-                                    <color key="textColor" red="0.28520548340000001" green="0.31244885919999998" blue="0.38303160670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
                                 <label alignment="right" verticalAlignment="center" text="❞" id="4A7-Ws-eku">
                                     <color key="textColor" red="0.01448708214" green="0.66109091040000001" blue="0.96040183310000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
                             </items>
-                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="5" bottom="0.0"/>
                         </group>
                         <button width="1" alignment="left" title="New Quote" id="YlO-4G-9GY">
