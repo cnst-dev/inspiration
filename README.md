@@ -1,11 +1,21 @@
 # inspiration
-Simple Inspiring pictures generator app written in Swift 3.
+Simple Inspiring pictures generator app written in Swift 3 for iOS with watchOS support.
 
 ## Compatibility
 
 This project is written in Swift 3.1 and Xcode 8.3.2.
 
-Inspiration app for iOS is compatible with iOS 9.1+.
+
+
+
+## Availebale on
+iPhone, iPad, iPad, Apple Watch
+
+## Tools
+1. API integration - unsplash.com and quotesondesign.com
+2. Storyboards, Auto Layout  
+3. Frameworks - Foundation, UIKit, WatchKit, WatchConnectivity  
+4. SwiftLint
 
 ## Author
 
