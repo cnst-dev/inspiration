@@ -19,6 +19,7 @@
 		CFE5F2621EC09BD7008DA005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE5F2601EC09BD7008DA005 /* Main.storyboard */; };
 		CFE5F2641EC09BD7008DA005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE5F2631EC09BD7008DA005 /* Assets.xcassets */; };
 		CFE5F2671EC09BD7008DA005 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE5F2651EC09BD7008DA005 /* LaunchScreen.storyboard */; };
+		CFF4FEE21EE53B9E005FF19F /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF4FEE11EE53B9E005FF19F /* UILabelPadding.swift */; };
 		CFF7704C1EE27FF200F49E6A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF7704A1EE27FF200F49E6A /* Interface.storyboard */; };
 		CFF7704E1EE27FF200F49E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF7704D1EE27FF200F49E6A /* Assets.xcassets */; };
 		CFF770551EE27FF200F49E6A /* Inspiration WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CFF770541EE27FF200F49E6A /* Inspiration WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -85,6 +86,7 @@
 		CFE5F2631EC09BD7008DA005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE5F2661EC09BD7008DA005 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE5F2681EC09BD7008DA005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF4FEE11EE53B9E005FF19F /* UILabelPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
 		CFF770481EE27FF200F49E6A /* Inspiration WatchKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inspiration WatchKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF7704B1EE27FF200F49E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CFF7704D1EE27FF200F49E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				CFAF1EF01EC1E3BE00FD707B /* Constants.swift */,
 				CFAF1EF21EC2008900FD707B /* Extensions.swift */,
 				CF004F731EC5F961009D39E4 /* Reachability.swift */,
+				CFF4FEE11EE53B9E005FF19F /* UILabelPadding.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				CF0394ED1ED566D80091C94F /* MessageView.swift in Sources */,
 				CFAF1EEE1EC1D0DE00FD707B /* Quote.swift in Sources */,
 				CF0394EB1ED561900091C94F /* Animating.swift in Sources */,
+				CFF4FEE21EE53B9E005FF19F /* UILabelPadding.swift in Sources */,
 				CFB993921EC0A16C0014C619 /* MainViewController.swift in Sources */,
 				CFAF1EF11EC1E3BE00FD707B /* Constants.swift in Sources */,
 				CF7CAE221EC33DC700B50E58 /* Background.swift in Sources */,
@@ -672,6 +676,7 @@
 				CFF770661EE27FF200F49E6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFF770691EE27FF200F49E6A /* Build configuration list for PBXNativeTarget "Inspiration WatchKit" */ = {
 			isa = XCConfigurationList;
@@ -680,6 +685,7 @@
 				CFF770641EE27FF200F49E6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

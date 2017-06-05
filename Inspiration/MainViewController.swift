@@ -21,15 +21,12 @@ class MainViewController: UIViewController, WCSessionDelegate {
 
     // MARK: - Outlets
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var contentTextView: UITextView! {
+    @IBOutlet private weak var contentLabel: UILabelPadding! {
         didSet {
-            contentTextView.translatesAutoresizingMaskIntoConstraints = true
-            contentTextView.isScrollEnabled = false
-            contentTextView.addGestureRecognizer(
-                UITapGestureRecognizer(target: self, action: #selector(getQuote))
-            )
+            contentLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(getQuote)))
         }
     }
+
     @IBOutlet private weak var imageView: UIImageView! {
         didSet {
             imageView.addGestureRecognizer(
@@ -109,9 +106,9 @@ class MainViewController: UIViewController, WCSessionDelegate {
         guard let url = Constants.quotesURL else { return }
         Quote.getQuote(from: url) { [weak self] (quote) in
             DispatchQueue.main.async {
-                self?.contentTextView.text = quote.content
+                self?.contentLabel.text = quote.content
                 self?.titleLabel.text = "- \(quote.title)"
-                self?.contentTextView.sizeToFit()
+                self?.contentLabel.sizeToFit()
                 self?.spinner.stopAnimating()
                 self?.view.isUserInteractionEnabled = true
             }
