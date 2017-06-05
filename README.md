@@ -13,11 +13,11 @@ This project is written in Swift 3.1 and Xcode 8.3.2.
 <img src="screen.jpg" alt="Screensho for iOS" />
 </h3>
 
-## Availebale on
+## Available on
 iPhone, iPad, iPad, Apple Watch
 
 ## Tools
-1. API integration - unsplash.com and quotesondesign.com
+1. API integration - [unsplash.com](https://unsplash.com/developers) and [quotesondesign.com](http://quotesondesign.com/api-v4-0/)
 2. Storyboards, Auto Layout  
 3. Frameworks - Foundation, UIKit, WatchKit, WatchConnectivity  
 4. SwiftLint
