@@ -5,13 +5,13 @@
 
 Simple Inspiring pictures generator app written in Swift 3 for iOS with watchOS support.
 
-## Compatibility
-
-This project is written in Swift 3.1 and Xcode 8.3.2.
-
 <h3 align="center">
 <img src="screen.jpg" alt="Screensho for iOS" />
 </h3>
+
+## Compatibility
+
+This project is written in Swift 3.1 and Xcode 8.3.2.
 
 ## Available on
 iPhone, iPad, iPad, Apple Watch
