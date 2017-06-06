@@ -13,6 +13,11 @@ struct Background {
     var image: UIImage
 
     // MARK: - Methods
+    /// Requests a image.
+    ///
+    /// - Parameters:
+    ///   - url: - The URL to be retrieved.
+    ///   - completion: - Completion handler.
     static func getImage(from url: URL, completion: @escaping ((Background) -> Void)) {
         URLSession(configuration: .ephemeral).dataTask(with: url) { (data, _, error) in
             guard error == nil else { return }

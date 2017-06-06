@@ -32,14 +32,20 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
 
     // MARK: - iPhone Integration
-    // MARK: Get data
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+    /// Receives a message dictionary from the iOS app and sets the quote label.
+    ///
+    /// - Parameters:
+    ///   - session: The session object of the current process.
+    ///   - message: A dictionary of property list values representing the contents of the message.
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async { [weak self] in
-            guard let text = userInfo["content"] as? String else { return }
+            guard let text = message["content"] as? String else { return }
             self?.quoteLabel.setText(text)
         }
     }
-    // MARK: Send data
+
+
+    /// Sends a message dictionary immediately to the iOS app.
     @IBAction private func newQuoteButtonPressed() {
         guard WCSession.default().activationState == .activated else { return }
         guard WCSession.default().isReachable else { return }

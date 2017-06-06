@@ -60,22 +60,10 @@ class MainViewController: UIViewController, WCSessionDelegate {
         WCSession.default().activate()
     }
 
-    // MARK: - WCSessionDelegate
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        if activationState == .activated {
-            print("Communication is activated")
-        }
-    }
-
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        print("Communication is inactive")
-    }
-
-    func sessionDidDeactivate(_ session: WCSession) {
-        WCSession.default().activate()
-    }
-
     // MARK: - Actions
+    /// Presents the alert.
+    ///
+    /// - Parameter sender: - The button from the Main.storyboard.
     @IBAction private func infoButtonPressed(_ sender: UIButton) {
         let alert = UIAlertController(
             title: Strings.info.title,
@@ -86,6 +74,9 @@ class MainViewController: UIViewController, WCSessionDelegate {
         present(alert, animated: true, completion: nil)
     }
 
+    /// Requests a quote and an image on the message view if the app is connected to the Internet.
+    ///
+    /// - Parameter sender: - The button from the Main.storyboard.
     @IBAction private func tryButtonPressed(_ sender: UIButton) {
         guard Reachability.isConnectedToNetwork() else { return }
 
@@ -95,6 +86,7 @@ class MainViewController: UIViewController, WCSessionDelegate {
     }
 
     // MARK: API integration
+    /// Requests a quoute if the app is connected to the Internet.
     func getQuote() {
         guard Reachability.isConnectedToNetwork() else {
             messageView.configure(for: .inWork)
@@ -116,6 +108,7 @@ class MainViewController: UIViewController, WCSessionDelegate {
         }
     }
 
+    /// Requests an image if the app is connected to the Internet.
     func getBackground() {
         guard Reachability.isConnectedToNetwork() else {
             messageView.configure(for: .inWork)
@@ -136,36 +129,61 @@ class MainViewController: UIViewController, WCSessionDelegate {
     }
 
     // MARK: - Methods
+    /// Makes a screenshot from the current context.
+    ///
+    /// - Returns: A screenshot.
     private func makeScreenShot() -> UIImage? {
+        buttonsStack.isHidden = true
         UIGraphicsBeginImageContextWithOptions(view.frame.size, false, UIScreen.main.scale)
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         view.layer.render(in: context)
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
         UIGraphicsEndImageContext()
+        buttonsStack.isHidden = false
         return image
     }
 
+    /// Presents an ActivityViewController to share a screenshot.
     func share() {
-        buttonsStack.isHidden = true
         guard let image = makeScreenShot() else { return }
-        buttonsStack.isHidden = false
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view
         present(activityViewController, animated: true, completion: nil)
     }
 
+    // MARK: WCSessionDelegate
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if activationState == .activated {
+            print("Communication is activated")
+        }
+    }
+
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("Communication is inactive")
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+        WCSession.default().activate()
+    }
+
     // MARK: - Watch Integration
-    // MARK: Get data
+    /// Receives a message dictionary from the Watch app and sets the text property.
+    ///
+    /// - Parameters:
+    ///   - session: The session object of the current process.
+    ///   - message: A dictionary of property list values representing the contents of the message.
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async { [weak self] in
             self?.getQuote()
         }
     }
 
-    // MARK: - Send data
+    /// Sends a message dictionary immediately to the Watch app.
+    ///
+    /// - Parameter quote: A quote to send.
     private func sendToWatch(quote: Quote) {
         guard WCSession.default().activationState == .activated else { return }
         let content = ["content": quote.content]
-        WCSession.default().transferUserInfo(content)
+        WCSession.default().sendMessage(content, replyHandler: nil)
     }
 }

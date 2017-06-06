@@ -15,6 +15,11 @@ struct Quote {
     var content = ""
 
     // MARK: - Methods
+    /// Requests a quote.
+    ///
+    /// - Parameters:
+    ///   - url: - The URL to be retrieved.
+    ///   - completion: - Completion handler.
     static func getQuote(from url: URL, completion: @escaping ((Quote) -> Void)) {
         URLSession(configuration: .ephemeral).dataTask(with: url) { (data, _, error) in
             guard error == nil else { return }
