@@ -6,7 +6,7 @@
 Simple Inspiring pictures generator app written in Swift 3 for iOS with watchOS support.
 
 <h3 align="center">
-<img src="screen.jpg" alt="Screensho for iOS" />
+<img src="screenshot.jpg" alt="Screenshot for iOS" />
 </h3>
 
 ## Compatibility
@@ -15,6 +15,11 @@ This project is written in Swift 3.1 and Xcode 8.3.2.
 
 ## Available on
 iPhone, iPad, iPad, Apple Watch
+
+<h3 align="left">
+<a href="https://itunes.apple.com/app/id1244659387"><img src="AppStore.png" alt="Screenshot for iOS" /></a>
+</h3>
+
 
 ## Tools
 1. API integration - [unsplash.com](https://unsplash.com/developers) and [quotesondesign.com](http://quotesondesign.com/api-v4-0/)
