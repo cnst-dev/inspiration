@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zWs-f7-w0Z">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,17 +30,6 @@
                                 <rect key="frame" x="0.0" y="451.5" width="320" height="116.5"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LEJ-QN-Ctt">
-                                <rect key="frame" x="290" y="28" width="22" height="22"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRG-Yk-8pD">
-                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
-                                        <connections>
-                                            <action selector="infoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hI-06-LZq"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="1Aq-aa-xbI">
                                 <rect key="frame" x="5" y="457" width="310" height="106"/>
                                 <subviews>
@@ -130,7 +118,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LEJ-QN-Ctt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="1Yr-kp-abR"/>
                             <constraint firstItem="mVD-go-VjA" firstAttribute="height" secondItem="1Aq-aa-xbI" secondAttribute="height" multiplier="1.1" id="5aM-80-6vU"/>
                             <constraint firstItem="kWf-b1-VKg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7Rk-ga-DX4"/>
                             <constraint firstItem="EZJ-PB-V07" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="81o-d1-mBW"/>
@@ -139,7 +126,6 @@
                             <constraint firstItem="EZJ-PB-V07" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jkt-Qh-adK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kWf-b1-VKg" secondAttribute="bottom" id="YRe-kW-63p"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M9L-vi-DM8" secondAttribute="bottom" id="eKQ-ye-WbK"/>
-                            <constraint firstItem="LEJ-QN-Ctt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="ep1-DX-WWE"/>
                             <constraint firstItem="M9L-vi-DM8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gTQ-XY-on3"/>
                             <constraint firstItem="1Aq-aa-xbI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="kW1-ow-vzs"/>
                             <constraint firstAttribute="trailing" secondItem="mVD-go-VjA" secondAttribute="trailing" id="lW5-q5-iep"/>
@@ -151,8 +137,19 @@
                             <constraint firstAttribute="trailing" secondItem="M9L-vi-DM8" secondAttribute="trailing" id="wsI-h7-e9g"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tSk-Ta-npi">
+                        <barButtonItem key="leftBarButtonItem" title="Help" id="ueq-Su-qYQ">
+                            <connections>
+                                <action selector="helpButtonPressed:" destination="BYZ-38-t0r" id="he2-nu-Zrh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="K6k-LG-ANs">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="BYZ-38-t0r" id="bFw-L3-SYO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="buttonsStack" destination="LEJ-QN-Ctt" id="ERn-Hp-Eak"/>
                         <outlet property="contentLabel" destination="OhM-f9-peg" id="B3Y-Jr-IV4"/>
                         <outlet property="imageView" destination="M9L-vi-DM8" id="YF5-R0-Zjh"/>
                         <outlet property="messageView" destination="kWf-b1-VKg" id="Rd2-SN-E2W"/>
@@ -162,6 +159,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027.5" y="97.183098591549296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vFV-Yc-wmB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zWs-f7-w0Z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IdS-l7-A0b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="due-ip-QLO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VY9-gQ-jck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="97.183098591549296"/>
         </scene>

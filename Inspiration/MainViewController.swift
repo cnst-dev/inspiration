@@ -14,7 +14,7 @@ class MainViewController: UIViewController, WCSessionDelegate {
     // MARK: - Nested
     private struct Strings {
         static let info = (title: "Instruction",
-                           message: "\n Swipe up for sharing.\n \n Tap the image to update.\n \n Tap the quote to update.",
+                           message: "\n Swipe up or tap the button for sharing.\n \n Tap the image to update.\n \n Tap the quote to update.",
                            button: "OK"
         )
     }
@@ -35,7 +35,7 @@ class MainViewController: UIViewController, WCSessionDelegate {
         }
     }
     @IBOutlet private weak var messageView: MessageView!
-    @IBOutlet private weak var buttonsStack: UIStackView!
+
     @IBOutlet private weak var quotesStack: UIStackView!
 
     @IBOutlet private weak var spinner: UIActivityIndicatorView!
@@ -63,7 +63,7 @@ class MainViewController: UIViewController, WCSessionDelegate {
     /// Presents the alert view.
     ///
     /// - Parameter sender: - The button from the Main.storyboard.
-    @IBAction private func infoButtonPressed(_ sender: UIButton) {
+    @IBAction private func helpButtonPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(
             title: Strings.info.title,
             message: Strings.info.message,
@@ -71,6 +71,13 @@ class MainViewController: UIViewController, WCSessionDelegate {
         )
         alert.addAction(UIAlertAction(title: Strings.info.button, style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+
+    /// Presents the share view.
+    ///
+    /// - Parameter sender: The bar button item from the Main.storyboard.
+    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
+        share()
     }
 
     /// Requests a quote and an image on the message view if the app is connected to the Internet.
@@ -132,13 +139,11 @@ class MainViewController: UIViewController, WCSessionDelegate {
     ///
     /// - Returns: A screenshot.
     private func makeScreenShot() -> UIImage? {
-        buttonsStack.isHidden = true
         UIGraphicsBeginImageContextWithOptions(view.frame.size, false, UIScreen.main.scale)
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         view.layer.render(in: context)
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
         UIGraphicsEndImageContext()
-        buttonsStack.isHidden = false
         return image
     }
 
