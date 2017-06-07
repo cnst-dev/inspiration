@@ -15,7 +15,7 @@ extension Animating where Self: UIView {
     /// Animates and reduces the view's alpha. Makes the view hidden when the animation sequence ends.
     ///
     /// - Parameter duration: The total duration of the animations, measured in seconds.
-    func animateAlpha(duration: CGFloat) {
+    func hideAnimation(duration: CGFloat) {
         self.isHidden = false
         let startAlpha = self.alpha
         UIView.animate(withDuration: TimeInterval(duration),

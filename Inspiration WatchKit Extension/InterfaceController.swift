@@ -44,7 +44,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
 
-
     /// Sends a message dictionary immediately to the iOS app.
     @IBAction private func newQuoteButtonPressed() {
         guard WCSession.default().activationState == .activated else { return }

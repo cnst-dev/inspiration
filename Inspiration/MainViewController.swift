@@ -49,11 +49,10 @@ class MainViewController: UIViewController, WCSessionDelegate {
         view.addGestureRecognizer(swipeRecognizer)
 
         guard Reachability.isConnectedToNetwork() else { return }
-
         getBackground()
         getQuote()
         messageView.configure(for: .onStart)
-        messageView.animateAlpha(duration: 2.0)
+        messageView.hideAnimation(duration: 2.0)
 
         guard WCSession.isSupported() else { return }
         WCSession.default().delegate = self
@@ -61,7 +60,7 @@ class MainViewController: UIViewController, WCSessionDelegate {
     }
 
     // MARK: - Actions
-    /// Presents the alert.
+    /// Presents the alert view.
     ///
     /// - Parameter sender: - The button from the Main.storyboard.
     @IBAction private func infoButtonPressed(_ sender: UIButton) {
@@ -82,15 +81,15 @@ class MainViewController: UIViewController, WCSessionDelegate {
 
         getBackground()
         getQuote()
-        messageView.animateAlpha(duration: 2.0)
+        messageView.hideAnimation(duration: 2.0)
     }
 
     // MARK: API integration
-    /// Requests a quoute if the app is connected to the Internet.
+    /// Requests a quoute if the app is connected to the Internet. Sends quote to the Watch app.
     func getQuote() {
         guard Reachability.isConnectedToNetwork() else {
             messageView.configure(for: .inWork)
-            messageView.animateAlpha(duration: 2.0)
+            messageView.hideAnimation(duration: 2.0)
             return
         }
         view.isUserInteractionEnabled = false
@@ -112,7 +111,7 @@ class MainViewController: UIViewController, WCSessionDelegate {
     func getBackground() {
         guard Reachability.isConnectedToNetwork() else {
             messageView.configure(for: .inWork)
-            messageView.animateAlpha(duration: 2.0)
+            messageView.hideAnimation(duration: 2.0)
             return
         }
         guard let url = Constants.imagesURL else { return }
@@ -182,7 +181,7 @@ class MainViewController: UIViewController, WCSessionDelegate {
     ///
     /// - Parameter quote: A quote to send.
     private func sendToWatch(quote: Quote) {
-        guard WCSession.default().activationState == .activated else { return }
+        guard WCSession.default().activationState == .activated && WCSession.default().isPaired else { return }
         let content = ["content": quote.content]
         WCSession.default().sendMessage(content, replyHandler: nil)
     }
